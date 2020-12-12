@@ -36,7 +36,7 @@ import {createResource} from '../utils'
 //     pokemonError = err
 //   })
 
-const resource = createResource(fetchPokemon('pikasdchu'))
+const resource = createResource(fetchPokemon('pikadchu'))
 
 function PokemonInfo() {
   console.log('rendered')
