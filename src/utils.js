@@ -16,9 +16,9 @@ function createResource(promise) {
   )
   return {
     read() {
-      if (status === 'pending') throw result
-      if (status === 'error') throw result
-      if (status === 'success') return result
+      if (status === 'pending') throw result // Promise itself to let know suspense wait for complete to rerender the component
+      if (status === 'error') throw result // error data, handled by error boundary
+      if (status === 'success') return result // Success data handled by our component
       throw new Error('This should be impossible')
     },
   }
