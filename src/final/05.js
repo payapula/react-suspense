@@ -37,14 +37,7 @@ function Img({src, alt, ...props}) {
 }
 
 function PokemonInfo({pokemonResource}) {
-  console.log('%cRender', 'font-size:1rem;color:red;border:1px dashed blue;')
-
   const pokemon = pokemonResource.read()
-
-  console.log(
-    '%cRender Continues',
-    'font-size:1rem;color:green;border:1px dashed blue;',
-  )
 
   return (
     <div>
@@ -68,30 +61,17 @@ function getPokemonResource(name) {
   const lowerName = name.toLowerCase()
   let resource = pokemonResourceCache[lowerName]
   if (resource) {
-    console.log(
-      '%c Cached Resource',
-      'font-size:1rem;color:green;border: 1px solid green;',
-    )
   }
 
   if (!resource) {
-    console.log(
-      '%c Fresh Resource',
-      'font-size:1rem;color:red;border: 1px solid red;',
-    )
-
     resource = createPokemonResource(lowerName)
     pokemonResourceCache[lowerName] = resource
   }
-
-  console.log('%c return Resource', 'font-size:1rem;color:black;')
 
   return resource
 }
 
 function createPokemonResource(pokemonName) {
-  console.log('%cCreate Resource', 'font-size:1rem;color:black;')
-
   return createResource(fetchPokemon(pokemonName))
 }
 
@@ -106,8 +86,6 @@ function App() {
       return
     }
     startTransition(() => {
-      console.log('%c Set resource', 'font-size:1rem;color:black;')
-
       setPokemonResource(getPokemonResource(pokemonName))
     })
   }, [pokemonName, startTransition])
