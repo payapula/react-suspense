@@ -4,7 +4,15 @@ import * as React from 'react'
 import {PokemonDataView} from '../../../pokemon'
 
 function PokemonInfo({pokemonResource}) {
+  console.log('%cRender', 'font-size:1rem;color:red;border:1px dashed blue;')
+
   const pokemon = pokemonResource.data.read()
+
+  console.log(
+    '%c           Render Continues',
+    'font-size:1rem;color:green;border:1px dashed blue;',
+  )
+
   return (
     <div>
       <div className="pokemon-info__img-wrapper">

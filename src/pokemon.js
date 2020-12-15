@@ -106,6 +106,12 @@ function PokemonInfoFallback({name}) {
     },
     fetchedAt: 'loading...',
   }
+
+  console.log(
+    '%cRender Fallback!!',
+    'font-size:1rem;color:orange;font-weight:500;border:1px dashed blue;',
+  )
+
   return (
     <div>
       <div className="pokemon-info__img-wrapper">

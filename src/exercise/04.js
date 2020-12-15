@@ -1,7 +1,6 @@
 // Cache resources
 // http://localhost:3000/isolated/exercise/04.js
 
-import AppWithProvider from 'final/04.extra-2'
 import * as React from 'react'
 import {
   fetchPokemon,
